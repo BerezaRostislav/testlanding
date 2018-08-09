@@ -1,0 +1,27 @@
+{
+  "name": "psdmaket",
+  "version": "1.0.0",
+  "description": "My luminous Nuxt.js project",
+  "author": "Rostislav Bereza",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.0.0",
+    "jquery": "^3.3.1",
+    "less-loader": "^4.1.0",
+    "nuxt": "^1.0.0",
+    "vue-scrollto": "^2.11.0",
+    "vue-style-loader": "^4.1.1",
+    "vuetify": "^0.17.3"
+  },
+  "devDependencies": {
+    "cross-env": "^5.0.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.1"
+  }
+}
