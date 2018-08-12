@@ -14,8 +14,6 @@
 <style scoped>
 
 .container {
-    padding: 0;
-    padding-top: 12px;
     margin: 0;
     max-width: 100%;
 }

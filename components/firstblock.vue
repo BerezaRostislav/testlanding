@@ -1,23 +1,27 @@
 <template>
-<v-container grid-list-xl>
+<v-container grid-list-sm>
 <v-layout row wrap>
-    <v-flex col-md-6>
+    <v-flex col-sm-6 class="title">
         <h2 class="text-first">БЕСПЛАТНЫЙ онлайн-вебинар</h2>
-        <h2 class="text-first" style="color:yellow;">ЕВРЕЙСКАЯ ЭМИГРАЦИЯ В ГЕРМАНИЮ</h2>
-        <h2 class="text-second">Вопросы руководителю рускоязычного общества Германии</h2>
-        <h2 class="text-first" style="margin-top:70px">25 сентября / четверг / 19-00 <span class="text-second">(киевское)</span> </h2>
+        <h2 class="text-first" style="color:yellow;">ЕВРЕЙСКАЯ ЭМИГРАЦИЯ</h2>
+        <h2 class="text-first" style="color:yellow;">в ГЕРМАНИЮ</h2>
+        <h2 class="text-second">Вопросы руководителю русскоязычного общества Германии</h2>
+        <h2 class="text-third">
+            <span class="title-number">25</span>
+            сентября / четверг /
+            <span class="title-number">19-00</span> 
+            <span style="font-size: 30px; letter-spacing: 0px; font-weight: 300; margin-left: 4px"> (киевское)</span> 
+        </h2>
     </v-flex>
-    <v-flex col-md-6 style="margin-top: 70px;">
-      <div style="text-align: center;">
+    <v-flex col-sm-6 class="counter">
         <span class="number">{{ this.number }} </span>
         <h3 class="text-number">мест осталось</h3>
-      </div>  
     </v-flex>
 </v-layout>
 <v-layout align-center justify-center column >
-        <button class="button" v-on:click="newnumber" >ЗАРЕГЕСТРИРОВАТСЯ</button>
-        <p><i class="fa fa-code"></i>Запись предоставляется бесплатно только зарегистрированным участникам</p>
-
+        <button class="button" v-on:click="newnumber" >ЗАРЕГИСТРИРОВАТЬСЯ</button>
+        <p class="under-button">Запись предоставляется бесплатно только зарегистрированным участникам</p>
+        <span class="icon-стрелка"></span>
 </v-layout>
 </v-container>
 </template>
@@ -26,7 +30,7 @@
 export default {
     data() {
         return{
-            number: 90,
+            number: 99,
         }      
     },
     methods: {
@@ -34,8 +38,6 @@ export default {
             this.number = this.number - 1
         }
     }
-
-
     }
     
 
@@ -43,88 +45,89 @@ export default {
 
 <style scoped>
 
-h1 { 
-    margin-top: 0;
-    margin-bottom: 25px; 
+.counter{
+    margin-top: 144px;
+    margin-bottom: 23px;
+    margin-right: 147px;
+    border: 2px solid white;
+    max-width: 365px;
+    text-align: center;
 }
 
-h1,h2,h4
-    {
-        font-weight: bold;
-    }
+.title {
+    margin-top: 129px;
+    margin-left: 141px;
+}
 
-p { line-height: 1.6em;
-    text-align: left;
-    }
-
+.title-number{
+    font-size: 60px;
+    font-weight:400;
+}
 .text-first{
-  font-size: 70px;
-  font-family: "Roboto";
-  color: rgb(255, 255, 255);
-  font-weight: bold;
-  line-height: 1.1;
-  text-align: left;
-}
-
-.text-number{
-  font-size: 30px;
-  font-family: "Roboto";
-  color: rgb(255, 255, 255);
-  line-height: 1;
-  font-weight: lighter;
-}
-
-.number{
-  border: 2px solid white;
-  text-align: center;
-  font-size: 180px;
-  font-family: "Roboto";
-  color: rgb(255, 255, 255);
-  line-height: 0.48;
-  font-weight: lighter;
-  padding: 30px;
-  padding-bottom: 60px;
+    letter-spacing: 0px;
+    /* Style for "БЕСПЛАТНЫЙ" */
+    font-size: 70px;
+    font-weight: 700;
+    line-height: 77px;
+    /* Text style for "БЕСПЛАТНЫЙ" */
+    color: #ffffff;
+    font-family: "Roboto";
+    text-align: left;
 }
 
 .text-second{
-  font-size: 27px;
-  font-family: "Roboto";
-  color: rgb(255, 255, 255);
-  line-height: 1.439;
-  text-align: left;
-  font-weight:lighter;
- 
+    margin-top: 5px;
+    margin-left: 3px;
+    font-family: Roboto;
+    font-size: 36px;
+    font-weight: 300;
+    line-height: 38px;
+    letter-spacing: 0px;
 }
 
-.text-{
-  font-size: 27px;
-  font-family: "Roboto";
-  color: rgb(255, 255, 255);
-  line-height: 1.439;
-  text-align: left;
-  font-weight:lighter;
- 
+.text-third{
+    margin-top: 89px;
+    margin-left: 28px;
+    font-family: Roboto;
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 86px;
+    letter-spacing: 1px;
+    position: relative;
+
 }
 
-@media (min-width: 992px) {
-  .container {
-    height: 100vh;
-  }
+.text-third:after{
+    display: block;
+    content: "";
+    width: 8px;
+    height: 61px;
+    background-color: #f0e353;
+    position: absolute;
+    right: 100%;
+    margin-right: 15px;
+    margin-top: -85px;
+    
+
 }
 
-@media (max-width: 991px) {
-  .container {
-    height: 120vh 100%;
-  }
-  .text-first {
-      font-size: 45px;
-  }
-  .text-second {
-      font-size: 20px;
-  }
-  .number {
-      font-size: 140px;
-  }
+.text-number{
+    margin-top: 26px;
+    width: 162px;
+    font-size: 38px;
+    font-family: "Roboto";
+    color: rgb(255, 255, 255);
+    line-height: 1;
+    font-weight: lighter;
+    margin-left: 97px;
+}
+
+.number{
+    text-align: center;
+    font-size: 180px;
+    font-family: "Roboto";
+    color: rgb(255, 255, 255);
+    font-weight: lighter;
 }
 
 .container {
@@ -132,31 +135,41 @@ p { line-height: 1.6em;
     background-size: cover;
     color: #fff;
     max-width: 100%;
+    min-height: 100vh;
 
 }
 .button {
-  color: rgb(240, 227, 83);
-  padding: 3px 5%;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 32px;
-  margin-top: 15%;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-  cursor: pointer;
-  border: 2px solid rgb(240, 227, 83);
-  background-color: transparent; 
-  border-radius: 3px;
-
+    color: rgb(240, 227, 83);
+    padding: 3px 5%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 50px;
+    margin-top: 130px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 2px solid rgb(240, 227, 83);
+    background-color: transparent; 
+    border-radius: 3px;
+    width: 791px;
+    height: 96px;
+    font-weight: 500;
 }
 
 .button:hover {
-  background-color: rgb(240, 227, 83);
-  color: white;
-  border: 2px solid white;
+    background-color: rgb(240, 227, 83);
+    color: white;
+    border: 2px solid white;
 }
 
+.under-button{
+    font-family: "Roboto";
+    font-size: 22px;
+    font-weight: lighter;
+    letter-spacing: -0.2px;
+    margin-top: 29px;
+}
 </style>
 
 
